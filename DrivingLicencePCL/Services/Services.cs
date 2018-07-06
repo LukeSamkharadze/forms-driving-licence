@@ -15,12 +15,12 @@ namespace DrivingLicencePCL.Services
     {
         public static List<Ticket> GetTicketList()
         {
-            return JsonConvert.DeserializeObject<List<Ticket>>(DrivingLicenceServerPCL.Services.Services.Download("tickets.json"));
+            return JsonConvert.DeserializeObject<List<Ticket>>(DrivingLicenceServerPCL.Services.Services.DownloadJson("Tickets.json"));
         }
 
         public static List<Topic> GetTopicList()
         {
-            return JsonConvert.DeserializeObject<List<Topic>>(DrivingLicenceServerPCL.Services.Services.Download("topics.json"));
+            return JsonConvert.DeserializeObject<List<Topic>>(DrivingLicenceServerPCL.Services.Services.DownloadJson("topics.json"));
         }
     }
 }

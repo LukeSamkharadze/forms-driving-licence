@@ -28,7 +28,7 @@ namespace DrivingLicencePCL.Models
         [JsonProperty("id")]
         public long Id { get; set; }
 
-        [JsonProperty("question")]
+        [JsonProperty("Ticket")]
         public string Question { get; set; }
 
         [JsonProperty("timestamp")]

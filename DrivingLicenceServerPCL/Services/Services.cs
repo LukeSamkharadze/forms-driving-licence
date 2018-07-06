@@ -9,16 +9,19 @@ namespace DrivingLicenceServerPCL.Services
 {
     public static class Services
     {
-        public static string path = $@"{Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\"))}DrivingLicenceServerPCL\Jsons\";
+        public static string path = $@"{Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), @"..\..\..\"))}DrivingLicenceServerPCL\";
 
-        public static string Download(string file)
+        public static string DownloadJson(string file)
         {
-            using (StreamReader streamReader = new StreamReader($"{path}{file}"))
+            using (StreamReader streamReader = new StreamReader($@"{path}Jsons\{file}"))
             {
-                //Console.OutputEncoding = System.Text.Encoding.UTF8;
-                //Console.WriteLine(streamReader.ReadToEnd());
                 return streamReader.ReadToEnd();
             }
+        }
+
+        public static string DownloadImage(string file)
+        {
+            return $@"{path}Images\{file}";
         }
     }
 }

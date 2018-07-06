@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Extentions\IEnumerableExtentions.cs" />
+    <Compile Include="Extentions\StringExtentions.cs" />
+    <Compile Include="Models\DrivingLicenceTest.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Topic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

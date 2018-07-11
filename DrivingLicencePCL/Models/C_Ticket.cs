@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace DrivingLicencePCL.Models
 {
-    public class Ticket
+    public class C_Ticket
     {
         [JsonProperty("answers")]
         public string Answers { get; set; }
@@ -36,5 +36,7 @@ namespace DrivingLicencePCL.Models
 
         [JsonProperty("topic")]
         public long Topic { get; set; }
+
+        public int? AnsweredAnswer { get; set; }
     }
 }

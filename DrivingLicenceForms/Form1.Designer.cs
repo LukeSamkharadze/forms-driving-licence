@@ -45,6 +45,8 @@ namespace DrivingLicenceForms
             this.CorrectAnswers_Label = new System.Windows.Forms.Label();
             this.Question_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.PictureBox_PictureBox = new System.Windows.Forms.PictureBox();
+            this.Previous_Button = new System.Windows.Forms.Button();
+            this.Answer_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TicketNumber_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -52,12 +54,12 @@ namespace DrivingLicenceForms
             // Topics_CheckedListBox
             // 
             this.Topics_CheckedListBox.CheckOnClick = true;
-            this.Topics_CheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Topics_CheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
             this.Topics_CheckedListBox.FormattingEnabled = true;
             this.Topics_CheckedListBox.HorizontalScrollbar = true;
             this.Topics_CheckedListBox.Location = new System.Drawing.Point(12, 38);
             this.Topics_CheckedListBox.Name = "Topics_CheckedListBox";
-            this.Topics_CheckedListBox.Size = new System.Drawing.Size(409, 238);
+            this.Topics_CheckedListBox.Size = new System.Drawing.Size(569, 235);
             this.Topics_CheckedListBox.TabIndex = 1;
             this.Topics_CheckedListBox.Tag = "Topics_CheckedListBox";
             // 
@@ -149,7 +151,7 @@ namespace DrivingLicenceForms
             // Answers_CheckedListBox
             // 
             this.Answers_CheckedListBox.CheckOnClick = true;
-            this.Answers_CheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Answers_CheckedListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
             this.Answers_CheckedListBox.FormattingEnabled = true;
             this.Answers_CheckedListBox.HorizontalScrollbar = true;
             this.Answers_CheckedListBox.Location = new System.Drawing.Point(12, 586);
@@ -157,12 +159,12 @@ namespace DrivingLicenceForms
             this.Answers_CheckedListBox.Size = new System.Drawing.Size(1428, 238);
             this.Answers_CheckedListBox.TabIndex = 11;
             this.Answers_CheckedListBox.Tag = "Answers_CheckedListBox";
-            this.Answers_CheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Answers_CheckedListBox_ItemCheckChanged);
+            this.Answers_CheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Answers_CheckedListBox_ItemCheck);
             // 
             // Next_Button
             // 
             this.Next_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Next_Button.Location = new System.Drawing.Point(675, 830);
+            this.Next_Button.Location = new System.Drawing.Point(765, 830);
             this.Next_Button.Name = "Next_Button";
             this.Next_Button.Size = new System.Drawing.Size(75, 25);
             this.Next_Button.TabIndex = 12;
@@ -215,7 +217,7 @@ namespace DrivingLicenceForms
             // 
             // Question_RichTextBox
             // 
-            this.Question_RichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Question_RichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.Question_RichTextBox.Location = new System.Drawing.Point(12, 313);
             this.Question_RichTextBox.Name = "Question_RichTextBox";
             this.Question_RichTextBox.ReadOnly = true;
@@ -234,11 +236,37 @@ namespace DrivingLicenceForms
             this.PictureBox_PictureBox.TabStop = false;
             this.PictureBox_PictureBox.Tag = "PictureBox_PictureBox";
             // 
+            // Previous_Button
+            // 
+            this.Previous_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Previous_Button.Location = new System.Drawing.Point(603, 830);
+            this.Previous_Button.Name = "Previous_Button";
+            this.Previous_Button.Size = new System.Drawing.Size(75, 25);
+            this.Previous_Button.TabIndex = 19;
+            this.Previous_Button.Tag = "Previous_Button";
+            this.Previous_Button.Text = "Previous";
+            this.Previous_Button.UseVisualStyleBackColor = true;
+            this.Previous_Button.Click += new System.EventHandler(this.Previous_Button_Click);
+            // 
+            // Answer_Button
+            // 
+            this.Answer_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Answer_Button.Location = new System.Drawing.Point(684, 830);
+            this.Answer_Button.Name = "Answer_Button";
+            this.Answer_Button.Size = new System.Drawing.Size(75, 25);
+            this.Answer_Button.TabIndex = 20;
+            this.Answer_Button.Tag = "Answer_Button";
+            this.Answer_Button.Text = "Answer";
+            this.Answer_Button.UseVisualStyleBackColor = true;
+            this.Answer_Button.Click += new System.EventHandler(this.Answer_Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1452, 867);
+            this.Controls.Add(this.Answer_Button);
+            this.Controls.Add(this.Previous_Button);
             this.Controls.Add(this.PictureBox_PictureBox);
             this.Controls.Add(this.Question_RichTextBox);
             this.Controls.Add(this.CorrectAnswers_Label);
@@ -280,6 +308,8 @@ namespace DrivingLicenceForms
         private System.Windows.Forms.Label CorrectAnswers_Label;
         private System.Windows.Forms.RichTextBox Question_RichTextBox;
         private System.Windows.Forms.PictureBox PictureBox_PictureBox;
+        private Button Previous_Button;
+        private Button Answer_Button;
     }
 }
 

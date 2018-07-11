@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrivingLicencePCL.Extentions
 {
-    public static class StringExtentions
+    public static class C_StringExtentions
     {
         public static IEnumerable<string> TakeSubstringsByEncolsingChar(this string input, char separator)
         {

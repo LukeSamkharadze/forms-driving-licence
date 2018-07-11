@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DrivingLicencePCL.Extentions
 {
-    public static class IEnumerableExtentions
+    public static class C_IEnumerableExtentions
     {
         public static TSource RandomElement<TSource>(this IEnumerable<TSource> enumerable)
         {

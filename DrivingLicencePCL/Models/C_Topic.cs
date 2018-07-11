@@ -8,7 +8,7 @@ using Newtonsoft.Json;
 
 namespace DrivingLicencePCL.Models
 {
-    public class Topic
+    public class C_Topic
     {
         [JsonProperty("id")]
         public long Id { get; set; }

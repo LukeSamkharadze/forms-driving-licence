@@ -85,12 +85,17 @@ namespace DrivingLicenceForms
             foreach (var answer in _DrivingLicenceTest.GetTicketAnswers(ticket))
             {
                 Answers_CheckedListBox.Items.Add(answer, (ticket.AnsweredAnswer == answerID++) ? true : false);
-                Console.WriteLine("added buttons " + answerID);
             }
         }
 
         private void Next_Button_Click(object sender, EventArgs e)
         {
+            if (Answers_CheckedListBox.CheckedIndices.Count > 0)
+            {
+                Console.WriteLine("pasuxi mixebulia");
+                _DrivingLicenceTest.Answer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
+            }
+
             // increasing CurrentTicketDisplayedIndex
             CurrentTicketDisplayedIndex++;
 
@@ -103,42 +108,28 @@ namespace DrivingLicenceForms
 
         private void Previous_Button_Click(object sender, EventArgs e)
         {
+            if (Answers_CheckedListBox.CheckedIndices.Count > 0)
+                _DrivingLicenceTest.Answer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
+
             // decreasing CurrentTicketDisplayedIndex
             if (CurrentTicketDisplayedIndex > 0)
                 CurrentTicketDisplayedIndex--;
 
             // display previous ticket
             DisplayTicket(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex]);
-        }
 
-
-        private void Answer_Button_Click(object sender, EventArgs e)
-        {
-            // if nothing is checked
-            if (Answers_CheckedListBox.CheckedItems.Count == 0)
-                return;
-
-            if (_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].AnsweredAnswer != null)
-                return;
-
-            // answer
-            _DrivingLicenceTest.Answer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex],(Answers_CheckedListBox.CheckedIndices[0]));
         }
 
         private void Answers_CheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            if (_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].AnsweredAnswer != null)
-            {
-                Console.WriteLine("some shit");
-                e.NewValue = e.CurrentValue;
-                return;
-            }
-
-            //(sender as CheckedListBox).check
-
             for (int i = 0; i < Answers_CheckedListBox.Items.Count; ++i)
                 if (i != e.Index)
                     Answers_CheckedListBox.SetItemChecked(i, false);
+        }
+
+        private void Finish_Button_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

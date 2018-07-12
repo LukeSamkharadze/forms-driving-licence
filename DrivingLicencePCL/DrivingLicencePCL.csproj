@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Extentions\AlgorithmForIOS.cs" />
     <Compile Include="Extentions\C_IEnumerableExtentions.cs" />
     <Compile Include="Extentions\C_StringExtentions.cs" />
     <Compile Include="Models\C_DrivingLicenceTest.cs" />

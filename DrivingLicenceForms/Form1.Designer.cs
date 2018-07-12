@@ -46,7 +46,7 @@ namespace DrivingLicenceForms
             this.Question_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.PictureBox_PictureBox = new System.Windows.Forms.PictureBox();
             this.Previous_Button = new System.Windows.Forms.Button();
-            this.Answer_Button = new System.Windows.Forms.Button();
+            this.Finish_Button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TicketNumber_NumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox_PictureBox)).BeginInit();
             this.SuspendLayout();
@@ -133,7 +133,7 @@ namespace DrivingLicenceForms
             this.TicketNumber_NumericUpDown.Tag = "TicketNumber_NumericUpDown";
             this.TicketNumber_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TicketNumber_NumericUpDown.Value = new decimal(new int[] {
-            1,
+            30,
             0,
             0,
             0});
@@ -156,7 +156,7 @@ namespace DrivingLicenceForms
             this.Answers_CheckedListBox.HorizontalScrollbar = true;
             this.Answers_CheckedListBox.Location = new System.Drawing.Point(12, 586);
             this.Answers_CheckedListBox.Name = "Answers_CheckedListBox";
-            this.Answers_CheckedListBox.Size = new System.Drawing.Size(1428, 238);
+            this.Answers_CheckedListBox.Size = new System.Drawing.Size(1428, 235);
             this.Answers_CheckedListBox.TabIndex = 11;
             this.Answers_CheckedListBox.Tag = "Answers_CheckedListBox";
             this.Answers_CheckedListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.Answers_CheckedListBox_ItemCheck);
@@ -164,7 +164,7 @@ namespace DrivingLicenceForms
             // Next_Button
             // 
             this.Next_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Next_Button.Location = new System.Drawing.Point(765, 830);
+            this.Next_Button.Location = new System.Drawing.Point(744, 830);
             this.Next_Button.Name = "Next_Button";
             this.Next_Button.Size = new System.Drawing.Size(75, 25);
             this.Next_Button.TabIndex = 12;
@@ -239,7 +239,7 @@ namespace DrivingLicenceForms
             // Previous_Button
             // 
             this.Previous_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Previous_Button.Location = new System.Drawing.Point(603, 830);
+            this.Previous_Button.Location = new System.Drawing.Point(566, 830);
             this.Previous_Button.Name = "Previous_Button";
             this.Previous_Button.Size = new System.Drawing.Size(75, 25);
             this.Previous_Button.TabIndex = 19;
@@ -248,24 +248,24 @@ namespace DrivingLicenceForms
             this.Previous_Button.UseVisualStyleBackColor = true;
             this.Previous_Button.Click += new System.EventHandler(this.Previous_Button_Click);
             // 
-            // Answer_Button
+            // Finish_Button
             // 
-            this.Answer_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Answer_Button.Location = new System.Drawing.Point(684, 830);
-            this.Answer_Button.Name = "Answer_Button";
-            this.Answer_Button.Size = new System.Drawing.Size(75, 25);
-            this.Answer_Button.TabIndex = 20;
-            this.Answer_Button.Tag = "Answer_Button";
-            this.Answer_Button.Text = "Answer";
-            this.Answer_Button.UseVisualStyleBackColor = true;
-            this.Answer_Button.Click += new System.EventHandler(this.Answer_Button_Click);
+            this.Finish_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.Finish_Button.Location = new System.Drawing.Point(1365, 830);
+            this.Finish_Button.Name = "Finish_Button";
+            this.Finish_Button.Size = new System.Drawing.Size(75, 25);
+            this.Finish_Button.TabIndex = 20;
+            this.Finish_Button.Tag = "Finish_Button";
+            this.Finish_Button.Text = "Finish";
+            this.Finish_Button.UseVisualStyleBackColor = true;
+            this.Finish_Button.Click += new System.EventHandler(this.Finish_Button_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1452, 867);
-            this.Controls.Add(this.Answer_Button);
+            this.Controls.Add(this.Finish_Button);
             this.Controls.Add(this.Previous_Button);
             this.Controls.Add(this.PictureBox_PictureBox);
             this.Controls.Add(this.Question_RichTextBox);
@@ -309,7 +309,7 @@ namespace DrivingLicenceForms
         private System.Windows.Forms.RichTextBox Question_RichTextBox;
         private System.Windows.Forms.PictureBox PictureBox_PictureBox;
         private Button Previous_Button;
-        private Button Answer_Button;
+        private Button Finish_Button;
     }
 }
 

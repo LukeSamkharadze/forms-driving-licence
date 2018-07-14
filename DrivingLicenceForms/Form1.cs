@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DrivingLicencePCL.Other;
 using DrivingLicencePCL.Extentions;
 
+using DrivingLicencePCL.Services;
 using DrivingLicencePCL.Models;
 
 namespace DrivingLicenceForms
@@ -31,6 +32,9 @@ namespace DrivingLicenceForms
             // Topics_CheckedListBox adding CheckBoxes
             foreach (var topic in _DrivingLicenceTest.Topics)
                 Topics_CheckedListBox.Items.Add(topic, false);
+
+            // subscribe Labels to variables
+            _DrivingLicenceTest.TicketsRemaining.subscribers += (s, ee) => TicketsRemaining_Label.Text = ee.ToString();
         }
 
         // First Section
@@ -47,33 +51,29 @@ namespace DrivingLicenceForms
 
         private void Start_Button_Click(object sender, EventArgs e)
         {
-            _DrivingLicenceTest.CorrectAnswers.subscribers += (s, ee) => CorrectAnswers_Label.Text = ee.ToString();
-            _DrivingLicenceTest.TicketsRemaining.subscribers += (s, ee) => TicketsRemaining_Label.Text = ee.ToString();
+            _DrivingLicenceTest.Restart();
 
-            CorrectAnswers_Label.Text = "0";
             _DrivingLicenceTest.TicketsRemaining.Data = (int)TicketNumber_NumericUpDown.Value;
 
-            // Moving selected topics to _DrivingLicenceTest.SelectedTopics
-            foreach (var topic in Topics_CheckedListBox.CheckedItems)  
-                    _DrivingLicenceTest.SelectedTopics.Add(topic as C_Topic);
+            List<C_Topic> selectedTopics = new List<C_Topic>();
 
-            // Create new ticket
-            _DrivingLicenceTest.CreateNewTicket();
+            foreach (var topic in Topics_CheckedListBox.CheckedItems)
+                    selectedTopics.Add(topic as C_Topic);
 
-            // Displaying ticket
-            DisplayTicket(_DrivingLicenceTest.TicketsCreated.Last());
+            _DrivingLicenceTest.CreateTickets(selectedTopics, (int)TicketNumber_NumericUpDown.Value);
 
-            // CurrentTicketDisplayedIndex
             CurrentTicketDisplayedIndex = 0;
+
+            DisplayTicket();
         }
       
-        // Second Section
-        private void DisplayTicket(C_Ticket ticket)
+        private void DisplayTicket()
         {
-            Question_RichTextBox.Text = ticket.Question;
+            Question_RichTextBox.Text = _DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].Question;
+
             try
             {
-                PictureBox_PictureBox.Image = Image.FromFile(_DrivingLicenceTest.GetPicturePath(ticket));
+                PictureBox_PictureBox.Image = Image.FromFile(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].Filename);
             }
             catch
             {
@@ -81,43 +81,37 @@ namespace DrivingLicenceForms
             }
 
             Answers_CheckedListBox.Items.Clear();
+
             int answerID = 0;
-            foreach (var answer in _DrivingLicenceTest.GetTicketAnswers(ticket))
-            {
-                Answers_CheckedListBox.Items.Add(answer, (ticket.AnsweredAnswer == answerID++) ? true : false);
-            }
+
+            foreach (var answer in _DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].Answers.TakeSubstringsByEncolsingChar('"'))
+                Answers_CheckedListBox.Items.Add(answer, (_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].AnsweredAnswer == answerID++) ? true : false);
         }
 
         private void Next_Button_Click(object sender, EventArgs e)
         {
-            if (Answers_CheckedListBox.CheckedIndices.Count > 0)
-            {
-                Console.WriteLine("pasuxi mixebulia");
-                _DrivingLicenceTest.Answer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
-            }
+            if (Answers_CheckedListBox.CheckedIndices.Count == 1)
+                _DrivingLicenceTest.MarkAnswer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
 
-            // increasing CurrentTicketDisplayedIndex
-            CurrentTicketDisplayedIndex++;
+            if (CurrentTicketDisplayedIndex != _DrivingLicenceTest.TicketsCreated.Count - 1)
+                CurrentTicketDisplayedIndex++;
+            else
+                return;
 
-            if(CurrentTicketDisplayedIndex >= _DrivingLicenceTest.TicketsCreated.Count)
-             _DrivingLicenceTest.CreateNewTicket();
-
-            // display next ticket
-            DisplayTicket(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex]);
+            DisplayTicket();
         }
 
         private void Previous_Button_Click(object sender, EventArgs e)
         {
-            if (Answers_CheckedListBox.CheckedIndices.Count > 0)
-                _DrivingLicenceTest.Answer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
+            if (Answers_CheckedListBox.CheckedIndices.Count == 0)
+                _DrivingLicenceTest.MarkAnswer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
 
-            // decreasing CurrentTicketDisplayedIndex
-            if (CurrentTicketDisplayedIndex > 0)
+            if (CurrentTicketDisplayedIndex != 0)
                 CurrentTicketDisplayedIndex--;
+            else
+                return;
 
-            // display previous ticket
-            DisplayTicket(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex]);
-
+            DisplayTicket();
         }
 
         private void Answers_CheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -131,5 +125,6 @@ namespace DrivingLicenceForms
         {
 
         }
+   
     }
 }

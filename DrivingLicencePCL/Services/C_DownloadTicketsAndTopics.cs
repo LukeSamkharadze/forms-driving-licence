@@ -11,7 +11,7 @@ using DrivingLicencePCL.Models;
 
 namespace DrivingLicencePCL.Services
 {
-    public static class C_Services
+    public static class C_DownloadTicketsAndTopics
     {
         public static List<C_Ticket> GetTicketList()
         {

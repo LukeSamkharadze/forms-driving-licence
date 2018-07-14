@@ -44,7 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Extentions\AlgorithmForIOS.cs" />
+    <Compile Include="Services\C_CreateTicketsList.cs" />
     <Compile Include="Extentions\C_IEnumerableExtentions.cs" />
     <Compile Include="Extentions\C_StringExtentions.cs" />
     <Compile Include="Models\C_DrivingLicenceTest.cs" />
@@ -52,7 +52,7 @@
     <Compile Include="Models\C_Topic.cs" />
     <Compile Include="Other\C_TVarHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\C_Services.cs" />
+    <Compile Include="Services\C_DownloadTicketsAndTopics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

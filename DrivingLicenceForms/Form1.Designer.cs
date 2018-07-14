@@ -41,8 +41,6 @@ namespace DrivingLicenceForms
             this.Next_Button = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.TicketsRemaining_Label = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.CorrectAnswers_Label = new System.Windows.Forms.Label();
             this.Question_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.PictureBox_PictureBox = new System.Windows.Forms.PictureBox();
             this.Previous_Button = new System.Windows.Forms.Button();
@@ -66,19 +64,19 @@ namespace DrivingLicenceForms
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(9, 18);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
+            this.label2.Location = new System.Drawing.Point(12, 15);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 17);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "Topics";
             // 
             // CheckAll_Button
             // 
             this.CheckAll_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CheckAll_Button.Location = new System.Drawing.Point(12, 282);
+            this.CheckAll_Button.Location = new System.Drawing.Point(12, 276);
             this.CheckAll_Button.Name = "CheckAll_Button";
-            this.CheckAll_Button.Size = new System.Drawing.Size(75, 25);
+            this.CheckAll_Button.Size = new System.Drawing.Size(150, 37);
             this.CheckAll_Button.TabIndex = 4;
             this.CheckAll_Button.Tag = "CheckAll_Button";
             this.CheckAll_Button.Text = "Check all";
@@ -88,9 +86,9 @@ namespace DrivingLicenceForms
             // Start_Button
             // 
             this.Start_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Start_Button.Location = new System.Drawing.Point(346, 282);
+            this.Start_Button.Location = new System.Drawing.Point(329, 276);
             this.Start_Button.Name = "Start_Button";
-            this.Start_Button.Size = new System.Drawing.Size(75, 25);
+            this.Start_Button.Size = new System.Drawing.Size(75, 37);
             this.Start_Button.TabIndex = 5;
             this.Start_Button.Tag = "Start_Button";
             this.Start_Button.Text = "Start";
@@ -100,25 +98,26 @@ namespace DrivingLicenceForms
             // UncheckAll_Button
             // 
             this.UncheckAll_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.UncheckAll_Button.Location = new System.Drawing.Point(93, 282);
+            this.UncheckAll_Button.Location = new System.Drawing.Point(173, 276);
             this.UncheckAll_Button.Name = "UncheckAll_Button";
-            this.UncheckAll_Button.Size = new System.Drawing.Size(75, 25);
+            this.UncheckAll_Button.Size = new System.Drawing.Size(150, 37);
             this.UncheckAll_Button.TabIndex = 6;
             this.UncheckAll_Button.Tag = "UncheckAll_Button";
-            this.UncheckAll_Button.Text = "Uncheck all";
+            this.UncheckAll_Button.Text = "Uncheck";
             this.UncheckAll_Button.UseVisualStyleBackColor = true;
             this.UncheckAll_Button.Click += new System.EventHandler(this.UncheckAll_Button_Click);
             // 
             // TicketNumber_NumericUpDown
             // 
+            this.TicketNumber_NumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
             this.TicketNumber_NumericUpDown.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.TicketNumber_NumericUpDown.Location = new System.Drawing.Point(346, 12);
+            this.TicketNumber_NumericUpDown.Location = new System.Drawing.Point(506, 9);
             this.TicketNumber_NumericUpDown.Maximum = new decimal(new int[] {
-            999,
+            2000,
             0,
             0,
             0});
@@ -128,7 +127,7 @@ namespace DrivingLicenceForms
             0,
             0});
             this.TicketNumber_NumericUpDown.Name = "TicketNumber_NumericUpDown";
-            this.TicketNumber_NumericUpDown.Size = new System.Drawing.Size(75, 20);
+            this.TicketNumber_NumericUpDown.Size = new System.Drawing.Size(75, 26);
             this.TicketNumber_NumericUpDown.TabIndex = 8;
             this.TicketNumber_NumericUpDown.Tag = "TicketNumber_NumericUpDown";
             this.TicketNumber_NumericUpDown.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -141,10 +140,10 @@ namespace DrivingLicenceForms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(240, 15);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
+            this.label1.Location = new System.Drawing.Point(382, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 17);
+            this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 9;
             this.label1.Text = "Ticket Number";
             // 
@@ -164,9 +163,9 @@ namespace DrivingLicenceForms
             // Next_Button
             // 
             this.Next_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Next_Button.Location = new System.Drawing.Point(744, 830);
+            this.Next_Button.Location = new System.Drawing.Point(734, 824);
             this.Next_Button.Name = "Next_Button";
-            this.Next_Button.Size = new System.Drawing.Size(75, 25);
+            this.Next_Button.Size = new System.Drawing.Size(625, 37);
             this.Next_Button.TabIndex = 12;
             this.Next_Button.Tag = "Next_Button";
             this.Next_Button.Text = "Next";
@@ -176,10 +175,10 @@ namespace DrivingLicenceForms
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(433, 293);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
+            this.label3.Location = new System.Drawing.Point(410, 286);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 17);
+            this.label3.Size = new System.Drawing.Size(147, 20);
             this.label3.TabIndex = 13;
             this.label3.Text = "Tickets Remaining";
             // 
@@ -187,41 +186,20 @@ namespace DrivingLicenceForms
             // 
             this.TicketsRemaining_Label.AutoSize = true;
             this.TicketsRemaining_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TicketsRemaining_Label.Location = new System.Drawing.Point(563, 293);
+            this.TicketsRemaining_Label.Location = new System.Drawing.Point(563, 289);
             this.TicketsRemaining_Label.Name = "TicketsRemaining_Label";
             this.TicketsRemaining_Label.Size = new System.Drawing.Size(18, 17);
             this.TicketsRemaining_Label.TabIndex = 14;
             this.TicketsRemaining_Label.Tag = "TicketsRemaining_Label";
             this.TicketsRemaining_Label.Text = "N";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(446, 276);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(111, 17);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Correct Answers";
-            // 
-            // CorrectAnswers_Label
-            // 
-            this.CorrectAnswers_Label.AutoSize = true;
-            this.CorrectAnswers_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.CorrectAnswers_Label.Location = new System.Drawing.Point(563, 276);
-            this.CorrectAnswers_Label.Name = "CorrectAnswers_Label";
-            this.CorrectAnswers_Label.Size = new System.Drawing.Size(18, 17);
-            this.CorrectAnswers_Label.TabIndex = 16;
-            this.CorrectAnswers_Label.Tag = "CorrectAnswers_Label";
-            this.CorrectAnswers_Label.Text = "N";
-            // 
             // Question_RichTextBox
             // 
             this.Question_RichTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.Question_RichTextBox.Location = new System.Drawing.Point(12, 313);
+            this.Question_RichTextBox.Location = new System.Drawing.Point(12, 319);
             this.Question_RichTextBox.Name = "Question_RichTextBox";
             this.Question_RichTextBox.ReadOnly = true;
-            this.Question_RichTextBox.Size = new System.Drawing.Size(569, 267);
+            this.Question_RichTextBox.Size = new System.Drawing.Size(569, 261);
             this.Question_RichTextBox.TabIndex = 17;
             this.Question_RichTextBox.Tag = "Question_RichTextBox";
             this.Question_RichTextBox.Text = "";
@@ -239,9 +217,9 @@ namespace DrivingLicenceForms
             // Previous_Button
             // 
             this.Previous_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Previous_Button.Location = new System.Drawing.Point(566, 830);
+            this.Previous_Button.Location = new System.Drawing.Point(12, 824);
             this.Previous_Button.Name = "Previous_Button";
-            this.Previous_Button.Size = new System.Drawing.Size(75, 25);
+            this.Previous_Button.Size = new System.Drawing.Size(710, 37);
             this.Previous_Button.TabIndex = 19;
             this.Previous_Button.Tag = "Previous_Button";
             this.Previous_Button.Text = "Previous";
@@ -251,9 +229,9 @@ namespace DrivingLicenceForms
             // Finish_Button
             // 
             this.Finish_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Finish_Button.Location = new System.Drawing.Point(1365, 830);
+            this.Finish_Button.Location = new System.Drawing.Point(1365, 824);
             this.Finish_Button.Name = "Finish_Button";
-            this.Finish_Button.Size = new System.Drawing.Size(75, 25);
+            this.Finish_Button.Size = new System.Drawing.Size(75, 37);
             this.Finish_Button.TabIndex = 20;
             this.Finish_Button.Tag = "Finish_Button";
             this.Finish_Button.Text = "Finish";
@@ -269,8 +247,6 @@ namespace DrivingLicenceForms
             this.Controls.Add(this.Previous_Button);
             this.Controls.Add(this.PictureBox_PictureBox);
             this.Controls.Add(this.Question_RichTextBox);
-            this.Controls.Add(this.CorrectAnswers_Label);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.TicketsRemaining_Label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.Next_Button);
@@ -304,8 +280,6 @@ namespace DrivingLicenceForms
         private System.Windows.Forms.Button Next_Button;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TicketsRemaining_Label;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label CorrectAnswers_Label;
         private System.Windows.Forms.RichTextBox Question_RichTextBox;
         private System.Windows.Forms.PictureBox PictureBox_PictureBox;
         private Button Previous_Button;

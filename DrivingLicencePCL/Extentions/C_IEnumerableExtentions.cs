@@ -8,14 +8,9 @@ namespace DrivingLicencePCL.Extentions
 {
     public static class C_IEnumerableExtentions
     {
-        public static TSource RandomElement<TSource>(this IEnumerable<TSource> enumerable)
+        public static TSource RandomElementInList<TSource>(this List<TSource> list, Random random)
         {
-            return enumerable.RandomElementUsing(new Random());
-        }
-
-        public static TSource RandomElementUsing<TSource>(this IEnumerable<TSource> enumerable, Random random)
-        {
-            return enumerable.ElementAt(random.Next(0, enumerable.Count()));
+            return list[random.Next(0, list.Count)];
         }
     }
 }

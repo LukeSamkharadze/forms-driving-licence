@@ -26,6 +26,7 @@ namespace DrivingLicencePCL.Models
         public IEnumerable<string> GetTicketAnswers(C_Ticket ticket)
         {
             return ticket.Answers.TakeSubstringsByEncolsingChar('"');
+            //
         }
 
         public string GetPicturePath(C_Ticket ticket)

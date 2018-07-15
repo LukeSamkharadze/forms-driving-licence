@@ -39,8 +39,6 @@ namespace DrivingLicenceForms
             this.label1 = new System.Windows.Forms.Label();
             this.Answers_CheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.Next_Button = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.TicketsRemaining_Label = new System.Windows.Forms.Label();
             this.Question_RichTextBox = new System.Windows.Forms.RichTextBox();
             this.PictureBox_PictureBox = new System.Windows.Forms.PictureBox();
             this.Previous_Button = new System.Windows.Forms.Button();
@@ -65,7 +63,7 @@ namespace DrivingLicenceForms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
-            this.label2.Location = new System.Drawing.Point(12, 15);
+            this.label2.Location = new System.Drawing.Point(8, 11);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 3;
@@ -76,7 +74,7 @@ namespace DrivingLicenceForms
             this.CheckAll_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CheckAll_Button.Location = new System.Drawing.Point(12, 276);
             this.CheckAll_Button.Name = "CheckAll_Button";
-            this.CheckAll_Button.Size = new System.Drawing.Size(150, 37);
+            this.CheckAll_Button.Size = new System.Drawing.Size(240, 37);
             this.CheckAll_Button.TabIndex = 4;
             this.CheckAll_Button.Tag = "CheckAll_Button";
             this.CheckAll_Button.Text = "Check all";
@@ -86,7 +84,7 @@ namespace DrivingLicenceForms
             // Start_Button
             // 
             this.Start_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Start_Button.Location = new System.Drawing.Point(329, 276);
+            this.Start_Button.Location = new System.Drawing.Point(506, 276);
             this.Start_Button.Name = "Start_Button";
             this.Start_Button.Size = new System.Drawing.Size(75, 37);
             this.Start_Button.TabIndex = 5;
@@ -98,9 +96,9 @@ namespace DrivingLicenceForms
             // UncheckAll_Button
             // 
             this.UncheckAll_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.UncheckAll_Button.Location = new System.Drawing.Point(173, 276);
+            this.UncheckAll_Button.Location = new System.Drawing.Point(260, 276);
             this.UncheckAll_Button.Name = "UncheckAll_Button";
-            this.UncheckAll_Button.Size = new System.Drawing.Size(150, 37);
+            this.UncheckAll_Button.Size = new System.Drawing.Size(240, 37);
             this.UncheckAll_Button.TabIndex = 6;
             this.UncheckAll_Button.Tag = "UncheckAll_Button";
             this.UncheckAll_Button.Text = "Uncheck";
@@ -163,35 +161,14 @@ namespace DrivingLicenceForms
             // Next_Button
             // 
             this.Next_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Next_Button.Location = new System.Drawing.Point(734, 824);
+            this.Next_Button.Location = new System.Drawing.Point(689, 824);
             this.Next_Button.Name = "Next_Button";
-            this.Next_Button.Size = new System.Drawing.Size(625, 37);
+            this.Next_Button.Size = new System.Drawing.Size(670, 37);
             this.Next_Button.TabIndex = 12;
             this.Next_Button.Tag = "Next_Button";
             this.Next_Button.Text = "Next";
             this.Next_Button.UseVisualStyleBackColor = true;
             this.Next_Button.Click += new System.EventHandler(this.Next_Button_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F);
-            this.label3.Location = new System.Drawing.Point(410, 286);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(147, 20);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Tickets Remaining";
-            // 
-            // TicketsRemaining_Label
-            // 
-            this.TicketsRemaining_Label.AutoSize = true;
-            this.TicketsRemaining_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TicketsRemaining_Label.Location = new System.Drawing.Point(563, 289);
-            this.TicketsRemaining_Label.Name = "TicketsRemaining_Label";
-            this.TicketsRemaining_Label.Size = new System.Drawing.Size(18, 17);
-            this.TicketsRemaining_Label.TabIndex = 14;
-            this.TicketsRemaining_Label.Tag = "TicketsRemaining_Label";
-            this.TicketsRemaining_Label.Text = "N";
             // 
             // Question_RichTextBox
             // 
@@ -219,7 +196,7 @@ namespace DrivingLicenceForms
             this.Previous_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Previous_Button.Location = new System.Drawing.Point(12, 824);
             this.Previous_Button.Name = "Previous_Button";
-            this.Previous_Button.Size = new System.Drawing.Size(710, 37);
+            this.Previous_Button.Size = new System.Drawing.Size(670, 37);
             this.Previous_Button.TabIndex = 19;
             this.Previous_Button.Tag = "Previous_Button";
             this.Previous_Button.Text = "Previous";
@@ -247,8 +224,6 @@ namespace DrivingLicenceForms
             this.Controls.Add(this.Previous_Button);
             this.Controls.Add(this.PictureBox_PictureBox);
             this.Controls.Add(this.Question_RichTextBox);
-            this.Controls.Add(this.TicketsRemaining_Label);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.Next_Button);
             this.Controls.Add(this.Answers_CheckedListBox);
             this.Controls.Add(this.label1);
@@ -278,8 +253,6 @@ namespace DrivingLicenceForms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox Answers_CheckedListBox;
         private System.Windows.Forms.Button Next_Button;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label TicketsRemaining_Label;
         private System.Windows.Forms.RichTextBox Question_RichTextBox;
         private System.Windows.Forms.PictureBox PictureBox_PictureBox;
         private Button Previous_Button;

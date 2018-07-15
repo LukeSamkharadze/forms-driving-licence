@@ -26,18 +26,12 @@ namespace DrivingLicenceForms
         {
             InitializeComponent();
 
-            // Updating(Downloading) Topics and Tickets
             _DrivingLicenceTest.Update();
 
-            // Topics_CheckedListBox adding CheckBoxes
             foreach (var topic in _DrivingLicenceTest.Topics)
                 Topics_CheckedListBox.Items.Add(topic, false);
-
-            // subscribe Labels to variables
-            _DrivingLicenceTest.TicketsRemaining.subscribers += (s, ee) => TicketsRemaining_Label.Text = ee.ToString();
         }
 
-        // First Section
         private void CheckAll_Button_Click(object sender, EventArgs e)
         {
             for (int i = 0; i < Topics_CheckedListBox.Items.Count; i++)
@@ -52,8 +46,6 @@ namespace DrivingLicenceForms
         private void Start_Button_Click(object sender, EventArgs e)
         {
             _DrivingLicenceTest.Restart();
-
-            _DrivingLicenceTest.TicketsRemaining.Data = (int)TicketNumber_NumericUpDown.Value;
 
             List<C_Topic> selectedTopics = new List<C_Topic>();
 
@@ -90,9 +82,6 @@ namespace DrivingLicenceForms
 
         private void Next_Button_Click(object sender, EventArgs e)
         {
-            if (Answers_CheckedListBox.CheckedIndices.Count == 1)
-                _DrivingLicenceTest.MarkAnswer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
-
             if (CurrentTicketDisplayedIndex != _DrivingLicenceTest.TicketsCreated.Count - 1)
                 CurrentTicketDisplayedIndex++;
             else
@@ -103,9 +92,6 @@ namespace DrivingLicenceForms
 
         private void Previous_Button_Click(object sender, EventArgs e)
         {
-            if (Answers_CheckedListBox.CheckedIndices.Count == 0)
-                _DrivingLicenceTest.MarkAnswer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
-
             if (CurrentTicketDisplayedIndex != 0)
                 CurrentTicketDisplayedIndex--;
             else
@@ -116,15 +102,20 @@ namespace DrivingLicenceForms
 
         private void Answers_CheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            for (int i = 0; i < Answers_CheckedListBox.Items.Count; ++i)
-                if (i != e.Index)
-                    Answers_CheckedListBox.SetItemChecked(i, false);
+            for (int ix = 0; ix < Answers_CheckedListBox.Items.Count; ++ix)
+                if (ix != e.Index) Answers_CheckedListBox.SetItemChecked(ix, false);
+
+            if (Answers_CheckedListBox.CheckedIndices.Count == 1)
+            {
+                Console.WriteLine("zd");
+                _DrivingLicenceTest.MarkAnswer(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex], Answers_CheckedListBox.CheckedIndices[0]);
+
+            }
         }
 
         private void Finish_Button_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show($"Correct Answers : {_DrivingLicenceTest.Finish()}");
         }
-   
     }
 }

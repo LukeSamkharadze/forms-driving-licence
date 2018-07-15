@@ -37,6 +37,6 @@ namespace DrivingLicencePCL.Models
         [JsonProperty("topic")]
         public long Topic { get; set; }
 
-        public int? AnsweredAnswer { get; set; }
+        public int AnsweredAnswer { get; set; } = -1;
     }
 }

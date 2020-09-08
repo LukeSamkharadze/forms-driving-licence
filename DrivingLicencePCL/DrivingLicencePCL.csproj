@@ -52,6 +52,7 @@
     <Compile Include="Models\C_Topic.cs" />
     <Compile Include="Other\C_TVarHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\C_DownloadImage.cs" />
     <Compile Include="Services\C_DownloadTicketsAndTopics.cs" />
   </ItemGroup>
   <ItemGroup>

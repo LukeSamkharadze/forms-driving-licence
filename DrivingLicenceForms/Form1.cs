@@ -65,7 +65,7 @@ namespace DrivingLicenceForms
 
             try
             {
-                PictureBox_PictureBox.Image = Image.FromFile(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].Filename);
+                PictureBox_PictureBox.Image = Image.FromFile(C_DownloadImage.DownloadImage(_DrivingLicenceTest.TicketsCreated[CurrentTicketDisplayedIndex].Filename));
             }
             catch
             {
